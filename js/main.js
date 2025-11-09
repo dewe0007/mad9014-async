@@ -1,7 +1,4 @@
-/* 
-Step 1: 
-init -> click listener, document.querySelector(body)
-
+/*
 Step 2: 
 click calls num.Random for rounded number (between 1-100?).
     - If number >50, return Promise including setTimeout, then generate random hex code (use hex code method shared in slack)
@@ -29,3 +26,24 @@ f(showString): pass in string
 */
 
 window.addEventListener('DOMContentLoaded', init);
+
+function init() {
+	const btn = document.querySelector('.btn');
+	btn.addEventListener('click', getNum);
+}
+
+function getNum(ev) {
+	let num = Math.floor(Math.random() * 100);
+	console.log(num);
+	if (num % 2 === 0) {
+		return new Promise(function (resolve, reject) {
+			setTimeout(resolve, 2000);
+		}).then(function () {
+			let hex = Math.random().toString(16);
+			let extracted = hex.substring(2, 8);
+			let color = `#${extracted}`;
+			const bg = document.querySelector('body');
+			bg.style.backgroundColor = color;
+		});
+	}
+}
