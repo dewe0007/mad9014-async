@@ -45,5 +45,13 @@ function getNum(ev) {
 			const bg = document.querySelector('body');
 			bg.style.backgroundColor = color;
 		});
+	} else {
+		return new Promise(function (resolve, reject) {
+			setTimeout(resolve, 2000);
+		}).then(function () {
+			let message = "isn't that odd!";
+			const main = document.querySelector('main');
+			main.innerHTML += message;
+		});
 	}
 }
