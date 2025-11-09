@@ -1,29 +1,29 @@
-/* 
-Step 1: 
-init -> click listener, document.querySelector(body)
+body {
+	font-family: 'Tsukimi Rounded', sans-serif;
+	text-align: center;
+}
 
-Step 2: 
-click calls num.Random for rounded number (between 1-100?).
-    - If number >50, return Promise including setTimeout, then generate random hex code (use hex code method shared in slack)
-    - if number <50, return Promise including setTimeout, then return string 
-    - both numbers can use the same Promise, the Promise is just to delay the result of the click generated number
+h1 {
+	text-decoration: underline;
+}
 
-Step 3: 
-f(bgCol): generate hex code
-    append CSS with new value for bg color
-        new Promise 
-            setTimeout
-            .then(generate hex code)
-            .then(append CSS)
-            .catch(sorry no color!)
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 6rem;
+	height: 50vh;
+	margin: 0;
+	padding-bottom: 10rem;
+}
 
-f(showString): pass in string
-    append HTML with new <p> element containing string
-        new Promise
-            setTimeout
-            .then(return string)
-            .then(append HTML)
-            .catch(sorry no message!)
-
-
-*/
+.btn {
+	border: 2px solid darkgrey;
+	border-radius: 10px;
+	background-color: transparent;
+	height: 3rem;
+	width: 12rem;
+	font-family: 'Tsukimi Rounded', sans-serif;
+	font-size: 120%;
+}
